@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,8 +46,13 @@
         }
 
         @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
         }
 
         .header {
@@ -179,7 +185,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
 
@@ -267,18 +273,27 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="floating-elements"></div>
-        
+
         <div class="header">
             <h1>🚀 Transforma tu Futuro Financiero</h1>
-            <p>Agenda una <strong>asesoría gratuita</strong> y descubre cómo alcanzar tus metas financieras más rápido de lo que imaginas</p>
+            <p>Agenda una <strong>asesoría gratuita</strong> y descubre cómo alcanzar tus metas financieras más rápido
+                de lo que imaginas</p>
         </div>
 
         <div class="benefits">
@@ -291,7 +306,7 @@
             </ul>
         </div>
 
-        <form id="asesoria-form">
+        <form action="https://formspree.io/f/xvgqvrow" method="POST" id="asesoria-form">
             <div class="form-row">
                 <div class="form-group">
                     <label for="nombre">Nombre *</label>
@@ -319,27 +334,28 @@
         </form>
 
         <div class="guarantee">
-            <p><strong>🛡️ Garantía 100%:</strong> Sin compromisos, sin costos ocultos. Solo 30 minutos que pueden cambiar tu vida financiera para siempre.</p>
+            <p><strong>🛡️ Garantía 100%:</strong> Sin compromisos, sin costos ocultos. Solo 30 minutos que pueden
+                cambiar tu vida financiera para siempre.</p>
         </div>
     </div>
 
     <script>
-        document.getElementById('asesoria-form').addEventListener('submit', function(e) {
+        document.getElementById('asesoria-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Aquí puedes agregar la lógica para enviar el formulario
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
-            
+
             // Simulación de envío exitoso
             alert('¡Excelente! Tu solicitud ha sido enviada. Te contactaremos pronto para confirmar tu asesoría gratuita.');
-            
+
             // Opcional: limpiar el formulario
             this.reset();
         });
 
         // Animación de entrada
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             document.querySelector('.container').style.animation = 'slideIn 0.8s ease-out';
         });
 
@@ -360,4 +376,5 @@
         document.head.appendChild(style);
     </script>
 </body>
+
 </html>
